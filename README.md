@@ -113,25 +113,25 @@ Produces an independent overarching report combining host system efficiency with
 | `--simulate-loss`    | `0.0`       | Percentage packet drop rate       |
 
 
-## Teacher Demonstration Guide
+## System Feature Verification
 
-Use this script to easily demonstrate all requirements of the project.
+Use the following workflows to verify key system capabilities natively.
 
-### Part 1: Packet Loss & Structured Logging
+### 1. Simulating Packet Loss & Logging
 1. Open Terminal 1 and start the server: `python server.py`
 2. Open Terminal 2 and artificially force 20% packet loss: 
    `python client.py --client-id 1 --rate 10 --duration 10 --simulate-loss 20`
-3. **Show**: The server terminal will actively flag a `20.00%` Loss Rate by algorithms tracking the missing sequence gaps.
-4. **Show**: Check your folder for `server.log` and `client_1.log`. Open them to demonstrate timestamped, structured event logging securely mirroring your terminal.
+3. The server terminal will actively flag a `~20.00%` Loss Rate via algorithms tracking the missing sequence gaps.
+4. Check the directory for `server.log` and `client_1.log`. These demonstrate timestamped, structured event logging seamlessly mirroring the terminal output.
 
-### Part 2: Multithreading & Database Persistence
-1. Explain that underneath the hood, the server is running a **Producer-Consumer Multithreaded** topology. Packets are parsed by 3 Worker Threads so the network socket never stalls.
+### 2. Validating Multithreading & Database Persistence
+1. The server utilizes a **Producer-Consumer Multithreaded** topology automatically. Incoming packets are parsed by 3 isolated Worker Threads to prevent network socket stalls.
 2. Hit **Ctrl+C** on the server terminal to stop it gracefully.
-3. **Show**: Open the `.gemini/` or project directory to reveal `telemetry.db`. This is the SQLite database populated safely by a dedicated Database Writer thread. You can optionally open it in an SQLite Database viewer to prove all recent telemetry data is archived perfectly in memory.
+3. Check the project directory to reveal `telemetry.db`. This is the SQLite database actively populated by a dedicated Database Writer thread. It can be opened in any standard SQLite viewer to prove historical telemetry data is archived correctly.
 
-### Part 3: CPU Metrics & Extreme Scalability
+### 3. CPU Metrics & Volumetric Scalability
 1. Start the server again.
-2. In Terminal 2, trigger a massive flood test using the automated launcher:
+2. In Terminal 2, trigger a flood test using the automated launcher:
    `python load_test.py --num-clients 20 --rate-per-client 100 --duration 5`
-3. **Show**: Note that the system easily spawns 20 nodes scaling simultaneously without crashing.
-4. **Show**: Wait for the test to conclude. The Load Tester actively prints the **Send efficiency** and records the precise **System CPU Usage %** calculated natively by `psutil`. Simultaneously trace back to the Server terminal to see the calculation of fractional **Avg Latency** measurements.
+3. The system easily spawns 20 independent processing nodes simultaneously without crashing.
+4. Once concluded, the Load Tester effectively prints the **Send efficiency** and records the precise **System CPU Usage %** calculated natively by the `psutil` engine. The Server terminal concurrently calculates fractional **Avg Latency** measurements across all nodes.
