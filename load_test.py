@@ -22,16 +22,16 @@ def run_load_test(num_clients: int, rate_per_client: int, duration: float,
     Spawn multiple telemetry client processes and monitor them.
     """
     print()
-    print("═" * 60)
+    print("=" * 60)
     print("  TELEMETRY LOAD TEST")
-    print("═" * 60)
+    print("=" * 60)
     print(f"  Server         : {server_ip}:{server_port}")
     print(f"  Clients        : {num_clients}")
     print(f"  Rate / client  : {rate_per_client} pkts/sec")
     print(f"  Total rate     : {num_clients * rate_per_client} pkts/sec")
     print(f"  Duration       : {duration}s")
     print(f"  Expected pkts  : {int(num_clients * rate_per_client * duration):,}")
-    print("═" * 60)
+    print("=" * 60)
     print()
 
     # Determine the path to client.py relative to this script
@@ -62,7 +62,7 @@ def run_load_test(num_clients: int, rate_per_client: int, duration: float,
             stderr=subprocess.PIPE,
         )
         processes.append((i, proc))
-        print(f"  [✓] Client {i} started (PID: {proc.pid})")
+        print(f"  [y] Client {i} started (PID: {proc.pid})")
     
     print(f"\n[Load Test] All {num_clients} clients launched. Waiting for completion...\n")
 
@@ -83,9 +83,9 @@ def run_load_test(num_clients: int, rate_per_client: int, duration: float,
     total_packets_sent = 0
     
     print()
-    print("═" * 60)
+    print("=" * 60)
     print("  LOAD TEST RESULTS")
-    print("═" * 60)
+    print("=" * 60)
     
     for r in results:
         # Extract "Total packets sent" from client output
@@ -98,7 +98,7 @@ def run_load_test(num_clients: int, rate_per_client: int, duration: float,
                     pass
         total_packets_sent += packets
         
-        status = "✓" if r['returncode'] == 0 else "✗"
+        status = "OK" if r['returncode'] == 0 else "FAIL"
         print(f"  [{status}] Client {r['client_id']:3d}: {packets:>8,} packets sent"
               f"  (exit code: {r['returncode']})")
         
@@ -110,13 +110,13 @@ def run_load_test(num_clients: int, rate_per_client: int, duration: float,
     efficiency = (total_packets_sent / expected_packets * 100) if expected_packets > 0 else 0
     
     print()
-    print("  ─────────────────────────────────────")
+    print("  -------------------------------------")
     print(f"  Total packets sent   : {total_packets_sent:>10,}")
     print(f"  Expected packets     : {expected_packets:>10,}")
     print(f"  Send efficiency      : {efficiency:>9.1f}%")
     print(f"  Total test duration  : {total_time:>9.2f}s")
     print(f"  Aggregate send rate  : {total_packets_sent / total_time:>9.1f} pkts/sec")
-    print("═" * 60)
+    print("=" * 60)
     print()
     print("  NOTE: Check server output for received packet counts and loss stats.")
     print()

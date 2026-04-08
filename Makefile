@@ -18,18 +18,13 @@ else
     RM      = rm -f
 endif
 
-.PHONY: all clean run run-client run-loadtest help
+.PHONY: all run run-client run-loadtest help
 
-all: $(TARGET)$(EXT)
+all: 
+	@echo "Nothing to compile for Python server. Use 'make run' to start."
 
-$(TARGET)$(EXT): server.c
-	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
-
-clean:
-	$(RM) $(TARGET)$(EXT)
-
-run: $(TARGET)$(EXT)
-	./$(TARGET)$(EXT)
+run:
+	python server.py
 
 run-client:
 	python client.py --server-ip 127.0.0.1 --server-port 8888 --client-id 1 --rate 100 --duration 10
@@ -39,9 +34,7 @@ run-loadtest:
 
 help:
 	@echo "Targets:"
-	@echo "  all           Build the server (default)"
-	@echo "  clean         Remove compiled binaries"
-	@echo "  run           Build and run the server"
+	@echo "  run           Run the Python server"
 	@echo "  run-client    Run a single telemetry client"
 	@echo "  run-loadtest  Run the load test with 5 clients"
 	@echo "  help          Show this help message"

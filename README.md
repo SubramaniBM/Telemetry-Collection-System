@@ -1,13 +1,13 @@
 # Telemetry Collection and Aggregation System
 
-A UDP-based distributed telemetry system where multiple Python clients continuously send telemetry data to a high-performance C server. The server tracks packet sequences, detects losses, aggregates metrics, and produces periodic reports.
+A UDP-based distributed telemetry system where multiple Python clients continuously send telemetry data to a high-performance Python server. The server tracks packet sequences, detects losses, aggregates metrics, and produces periodic reports.
 
 ## Architecture
 
 ```
 ┌─────────────┐           ┌──────────────────────────┐
 │  Client 1   │──── UDP──►│                          │
-│  (Python)   │           │   Telemetry Server (C)   │
+│  (Python)   │           │ Telemetry Server (Python)│
 ├─────────────┤           │                          │
 │  Client 2   │──── UDP──►│  • Packet Ingestion      │
 │  (Python)   │           │  • Sequence Tracking     │
@@ -33,29 +33,15 @@ Each telemetry packet is a **21-byte binary structure** (little-endian):
 
 | File           | Language | Description                              |
 |----------------|----------|------------------------------------------|
-| `server.c`     | C        | UDP telemetry collection server          |
+| `server.py`    | Python   | UDP telemetry collection server          |
 | `client.py`    | Python   | Telemetry sender client                  |
 | `load_test.py` | Python   | Multi-client scalability/stress test     |
-| `Makefile`     | Make     | Build system for the server              |
+| `Makefile`     | Make     | Convenience commands                     |
 
-## Building
+## Requirements
 
 ### Prerequisites
-- **GCC** (MinGW on Windows, or any C compiler)
 - **Python 3.6+**
-
-### Compile the server
-
-```bash
-# Using Make
-make
-
-# Or manually on Windows
-gcc -Wall -Wextra -O2 -o server.exe server.c -lws2_32
-
-# On Linux/Mac
-gcc -Wall -Wextra -O2 -o server server.c
-```
 
 ## Usage
 
@@ -63,10 +49,10 @@ gcc -Wall -Wextra -O2 -o server server.c
 
 ```bash
 # Default port 8888
-./server.exe
+python server.py
 
 # Custom port
-./server.exe 9000
+python server.py 9000
 ```
 
 The server will print a periodic report every 5 seconds showing:
