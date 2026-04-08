@@ -1,0 +1,11 @@
+[2026-04-08 10:17:10,395] Client_2 [INFO] Sending telemetry to 127.0.0.1:8888
+[2026-04-08 10:17:10,396] Client_2 [INFO] Rate: 50 pkts/sec | Duration: 6.0s | Simulated Loss: 10.0%
+[2026-04-08 10:17:10,396] Client_2 [INFO] Packet size: 21 bytes
+[2026-04-08 10:17:16,396] Client_2 [INFO] ========== Summary ==========
+[2026-04-08 10:17:16,396] Client_2 [INFO] Total sequence numbers consumed : 294
+[2026-04-08 10:17:16,397] Client_2 [INFO] Actual packets sent to wire     : 264
+[2026-04-08 10:17:16,397] Client_2 [INFO] Packets artificially dropped    : 30
+[2026-04-08 10:17:16,397] Client_2 [INFO] Duration                        : 6.00s
+[2026-04-08 10:17:16,398] Client_2 [INFO] Actual wire send rate           : 44.0 pkts/sec
+[2026-04-08 10:17:16,398] Client_2 [INFO] Data sent                       : 5,544 bytes
+[2026-04-08 10:17:16,398] Client_2 [INFO] =============================

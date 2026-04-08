@@ -1,0 +1,47 @@
+[2026-04-08 10:17:10,049] LoadTester [INFO] ============================================================
+[2026-04-08 10:17:10,050] LoadTester [INFO]   TELEMETRY LOAD TEST WITH PERFORMANCE METRICS
+[2026-04-08 10:17:10,051] LoadTester [INFO] ============================================================
+[2026-04-08 10:17:10,051] LoadTester [INFO]   Server         : 127.0.0.1:8888
+[2026-04-08 10:17:10,051] LoadTester [INFO]   Clients        : 4
+[2026-04-08 10:17:10,052] LoadTester [INFO]   Rate / client  : 50 pkts/sec
+[2026-04-08 10:17:10,052] LoadTester [INFO]   Total rate     : 200 pkts/sec
+[2026-04-08 10:17:10,053] LoadTester [INFO]   Duration       : 6.0s
+[2026-04-08 10:17:10,053] LoadTester [INFO]   Expected pkts  : 1,200
+[2026-04-08 10:17:10,054] LoadTester [INFO]   Simulated Loss : 10.0%
+[2026-04-08 10:17:10,054] LoadTester [INFO] ============================================================
+[2026-04-08 10:17:10,055] LoadTester [INFO] Spawning 4 clients...
+[2026-04-08 10:17:10,097] LoadTester [INFO]   [OK] Client 1 started (PID: 23232)
+[2026-04-08 10:17:10,133] LoadTester [INFO]   [OK] Client 2 started (PID: 14944)
+[2026-04-08 10:17:10,166] LoadTester [INFO]   [OK] Client 3 started (PID: 22316)
+[2026-04-08 10:17:10,202] LoadTester [INFO]   [OK] Client 4 started (PID: 13828)
+[2026-04-08 10:17:10,202] LoadTester [INFO] 
+All 4 clients launched. Collecting CPU metrics while running...
+
+[2026-04-08 10:17:16,725] LoadTester [INFO] ============================================================
+[2026-04-08 10:17:16,725] LoadTester [INFO]   LOAD TEST RESULTS
+[2026-04-08 10:17:16,725] LoadTester [INFO] ============================================================
+[2026-04-08 10:17:16,725] LoadTester [INFO]   [OK] Client   1:        0 sent,    0 dropped
+[2026-04-08 10:17:16,726] LoadTester [ERROR]        [2026-04-08 10:17:10,386] Client_1 [INFO] Sending telemetry to 127.0.0.1:8888
+[2026-04-08 10:17:16,726] LoadTester [ERROR]        [2026-04-08 10:17:10,387] Client_1 [INFO] Rate: 50 pkts/sec | Duration: 6.0s | Simulated Loss: 10.0%
+[2026-04-08 10:17:16,726] LoadTester [ERROR]        [2026-04-08 10:17:10,387] Client_1 [INFO] Packet size: 21 bytes
+[2026-04-08 10:17:16,726] LoadTester [INFO]   [OK] Client   2:        0 sent,    0 dropped
+[2026-04-08 10:17:16,727] LoadTester [ERROR]        [2026-04-08 10:17:10,395] Client_2 [INFO] Sending telemetry to 127.0.0.1:8888
+[2026-04-08 10:17:16,727] LoadTester [ERROR]        [2026-04-08 10:17:10,396] Client_2 [INFO] Rate: 50 pkts/sec | Duration: 6.0s | Simulated Loss: 10.0%
+[2026-04-08 10:17:16,727] LoadTester [ERROR]        [2026-04-08 10:17:10,396] Client_2 [INFO] Packet size: 21 bytes
+[2026-04-08 10:17:16,727] LoadTester [INFO]   [OK] Client   3:        0 sent,    0 dropped
+[2026-04-08 10:17:16,728] LoadTester [ERROR]        [2026-04-08 10:17:10,412] Client_3 [INFO] Sending telemetry to 127.0.0.1:8888
+[2026-04-08 10:17:16,728] LoadTester [ERROR]        [2026-04-08 10:17:10,413] Client_3 [INFO] Rate: 50 pkts/sec | Duration: 6.0s | Simulated Loss: 10.0%
+[2026-04-08 10:17:16,728] LoadTester [ERROR]        [2026-04-08 10:17:10,413] Client_3 [INFO] Packet size: 21 bytes
+[2026-04-08 10:17:16,728] LoadTester [INFO]   [OK] Client   4:        0 sent,    0 dropped
+[2026-04-08 10:17:16,728] LoadTester [ERROR]        [2026-04-08 10:17:10,466] Client_4 [INFO] Sending telemetry to 127.0.0.1:8888
+[2026-04-08 10:17:16,728] LoadTester [ERROR]        [2026-04-08 10:17:10,467] Client_4 [INFO] Rate: 50 pkts/sec | Duration: 6.0s | Simulated Loss: 10.0%
+[2026-04-08 10:17:16,729] LoadTester [ERROR]        [2026-04-08 10:17:10,467] Client_4 [INFO] Packet size: 21 bytes
+[2026-04-08 10:17:16,729] LoadTester [INFO]   -------------------------------------
+[2026-04-08 10:17:16,729] LoadTester [INFO]   Expected (Wire) Pkts :      1,080
+[2026-04-08 10:17:16,729] LoadTester [INFO]   Total sent to wire   :          0
+[2026-04-08 10:17:16,729] LoadTester [INFO]   Intentionally Dropped:          0
+[2026-04-08 10:17:16,729] LoadTester [INFO]   Send efficiency      :       0.0%
+[2026-04-08 10:17:16,730] LoadTester [INFO]   Total test duration  :      6.67s
+[2026-04-08 10:17:16,730] LoadTester [INFO]   Aggregate send rate  :       0.0 pkts/sec
+[2026-04-08 10:17:16,730] LoadTester [INFO]   Avg System CPU Usage :      25.5%
+[2026-04-08 10:17:16,730] LoadTester [INFO] ============================================================

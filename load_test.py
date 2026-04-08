@@ -3,10 +3,8 @@
 Telemetry Load Test
 ===================
 Launches multiple telemetry clients concurrently to stress-test the server.
-Collects results and prints a combined performance summary.
-
-Usage:
-  python load_test.py --num-clients 10 --rate-per-client 100 --duration 10
+Collects results and prints a combined performance summary. Includes CPU
+and memory measurement logic.
 """
 
 import argparse
@@ -14,39 +12,55 @@ import subprocess
 import sys
 import time
 import os
+import logging
+import psutil
 
+def setup_logger():
+    logger = logging.getLogger("LoadTester")
+    logger.setLevel(logging.INFO)
+    fh = logging.FileHandler("load_test.log")
+    ch = logging.StreamHandler()
+    formatter = logging.Formatter('[%(asctime)s] %(name)s [%(levelname)s] %(message)s')
+    fh.setFormatter(formatter)
+    ch.setFormatter(formatter)
+    logger.addHandler(fh)
+    logger.addHandler(ch)
+    return logger
+
+logger = setup_logger()
 
 def run_load_test(num_clients: int, rate_per_client: int, duration: float,
-                  server_ip: str, server_port: int):
-    """
-    Spawn multiple telemetry client processes and monitor them.
-    """
-    print()
-    print("=" * 60)
-    print("  TELEMETRY LOAD TEST")
-    print("=" * 60)
-    print(f"  Server         : {server_ip}:{server_port}")
-    print(f"  Clients        : {num_clients}")
-    print(f"  Rate / client  : {rate_per_client} pkts/sec")
-    print(f"  Total rate     : {num_clients * rate_per_client} pkts/sec")
-    print(f"  Duration       : {duration}s")
-    print(f"  Expected pkts  : {int(num_clients * rate_per_client * duration):,}")
-    print("=" * 60)
-    print()
+                  server_ip: str, server_port: int, simulate_loss: float):
+                  
+    logger.info("=" * 60)
+    logger.info("  TELEMETRY LOAD TEST WITH PERFORMANCE METRICS")
+    logger.info("=" * 60)
+    logger.info(f"  Server         : {server_ip}:{server_port}")
+    logger.info(f"  Clients        : {num_clients}")
+    logger.info(f"  Rate / client  : {rate_per_client} pkts/sec")
+    logger.info(f"  Total rate     : {num_clients * rate_per_client} pkts/sec")
+    logger.info(f"  Duration       : {duration}s")
+    logger.info(f"  Expected pkts  : {int(num_clients * rate_per_client * duration):,}")
+    logger.info(f"  Simulated Loss : {simulate_loss}%")
+    logger.info("=" * 60)
 
-    # Determine the path to client.py relative to this script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     client_script = os.path.join(script_dir, "client.py")
     
     if not os.path.exists(client_script):
-        print(f"Error: client.py not found at {client_script}", file=sys.stderr)
+        logger.error(f"client.py not found at {client_script}")
         sys.exit(1)
 
-    # Spawn client processes
     processes = []
+    
+    # Track host CPU metrics
+    process = psutil.Process()
+    cpu_start = process.cpu_percent()
+    cpu_measurements = []
+
+    logger.info(f"Spawning {num_clients} clients...")
     start_time = time.time()
     
-    print(f"[Load Test] Spawning {num_clients} clients...")
     for i in range(1, num_clients + 1):
         cmd = [
             sys.executable, client_script,
@@ -55,6 +69,7 @@ def run_load_test(num_clients: int, rate_per_client: int, duration: float,
             '--client-id', str(i),
             '--rate', str(rate_per_client),
             '--duration', str(duration),
+            '--simulate-loss', str(simulate_loss)
         ]
         proc = subprocess.Popen(
             cmd,
@@ -62,11 +77,14 @@ def run_load_test(num_clients: int, rate_per_client: int, duration: float,
             stderr=subprocess.PIPE,
         )
         processes.append((i, proc))
-        print(f"  [y] Client {i} started (PID: {proc.pid})")
+        logger.info(f"  [OK] Client {i} started (PID: {proc.pid})")
     
-    print(f"\n[Load Test] All {num_clients} clients launched. Waiting for completion...\n")
+    logger.info(f"\nAll {num_clients} clients launched. Collecting CPU metrics while running...\n")
 
-    # Wait for all processes to finish and collect output
+    # Monitor CPU while waiting for duration
+    while any(p.poll() is None for _, p in processes):
+        cpu_measurements.append(psutil.cpu_percent(interval=0.5))
+
     results = []
     for client_id, proc in processes:
         stdout, stderr = proc.communicate()
@@ -78,55 +96,55 @@ def run_load_test(num_clients: int, rate_per_client: int, duration: float,
         })
 
     total_time = time.time() - start_time
-
-    # Parse results and print summary
     total_packets_sent = 0
+    total_artificially_dropped = 0
     
-    print()
-    print("=" * 60)
-    print("  LOAD TEST RESULTS")
-    print("=" * 60)
+    logger.info("=" * 60)
+    logger.info("  LOAD TEST RESULTS")
+    logger.info("=" * 60)
     
     for r in results:
-        # Extract "Total packets sent" from client output
-        packets = 0
+        packets_sent = 0
+        dropped = 0
+        
         for line in r['stdout'].split('\n'):
-            if 'Total packets sent' in line:
-                try:
-                    packets = int(line.split(':')[-1].strip())
-                except ValueError:
-                    pass
-        total_packets_sent += packets
+            if 'Actual packets sent' in line:
+                try: packets_sent = int(line.split(':')[-1].strip())
+                except ValueError: pass
+            if 'Packets artificially dropped' in line:
+                try: dropped = int(line.split(':')[-1].strip())
+                except ValueError: pass
+        
+        total_packets_sent += packets_sent
+        total_artificially_dropped += dropped
         
         status = "OK" if r['returncode'] == 0 else "FAIL"
-        print(f"  [{status}] Client {r['client_id']:3d}: {packets:>8,} packets sent"
-              f"  (exit code: {r['returncode']})")
+        logger.info(f"  [{status}] Client {r['client_id']:3d}: {packets_sent:>8,} sent, {dropped:>4,} dropped")
         
         if r['stderr'].strip():
             for err_line in r['stderr'].strip().split('\n')[:3]:
-                print(f"       {err_line}")
+                logger.error(f"       {err_line}")
     
     expected_packets = int(num_clients * rate_per_client * duration)
-    efficiency = (total_packets_sent / expected_packets * 100) if expected_packets > 0 else 0
+    # The clients are dropping simulate_loss %, so actual wire expected is less
+    wire_expected = expected_packets * (1.0 - (simulate_loss/100.0))
+    efficiency = (total_packets_sent / wire_expected * 100) if wire_expected > 0 else 0
     
-    print()
-    print("  -------------------------------------")
-    print(f"  Total packets sent   : {total_packets_sent:>10,}")
-    print(f"  Expected packets     : {expected_packets:>10,}")
-    print(f"  Send efficiency      : {efficiency:>9.1f}%")
-    print(f"  Total test duration  : {total_time:>9.2f}s")
-    print(f"  Aggregate send rate  : {total_packets_sent / total_time:>9.1f} pkts/sec")
-    print("=" * 60)
-    print()
-    print("  NOTE: Check server output for received packet counts and loss stats.")
-    print()
+    avg_cpu = sum(cpu_measurements) / len(cpu_measurements) if cpu_measurements else 0.0
 
-    return total_packets_sent
+    logger.info("  -------------------------------------")
+    logger.info(f"  Expected (Wire) Pkts : {int(wire_expected):>10,}")
+    logger.info(f"  Total sent to wire   : {total_packets_sent:>10,}")
+    logger.info(f"  Intentionally Dropped: {total_artificially_dropped:>10,}")
+    logger.info(f"  Send efficiency      : {efficiency:>9.1f}%")
+    logger.info(f"  Total test duration  : {total_time:>9.2f}s")
+    logger.info(f"  Aggregate send rate  : {total_packets_sent / total_time:>9.1f} pkts/sec")
+    logger.info(f"  Avg System CPU Usage : {avg_cpu:>9.1f}%")
+    logger.info("=" * 60)
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description='Telemetry Load Test — spawns multiple clients for stress testing')
+    parser = argparse.ArgumentParser(description='Telemetry Load Test')
     parser.add_argument('--num-clients', type=int, default=5,
                         help='Number of concurrent clients (default: 5)')
     parser.add_argument('--rate-per-client', type=int, default=100,
@@ -137,15 +155,13 @@ def main():
                         help='Server IP address (default: 127.0.0.1)')
     parser.add_argument('--server-port', type=int, default=8888,
                         help='Server UDP port (default: 8888)')
+    parser.add_argument('--simulate-loss', type=float, default=0.0,
+                        help='Artificial packet loss percentage (0-100)')
     
     args = parser.parse_args()
     
-    if args.num_clients <= 0:
-        print("Error: --num-clients must be positive.", file=sys.stderr)
-        sys.exit(1)
-    
     run_load_test(args.num_clients, args.rate_per_client, args.duration,
-                  args.server_ip, args.server_port)
+                  args.server_ip, args.server_port, args.simulate_loss)
 
 
 if __name__ == '__main__':

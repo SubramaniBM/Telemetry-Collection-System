@@ -1,0 +1,302 @@
+[2026-04-08 10:17:08,964] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:08,965] TelemetryServer [INFO]   TELEMETRY COLLECTION SERVER (Python)
+[2026-04-08 10:17:08,965] TelemetryServer [INFO]   Listening on 0.0.0.0:8888 (UDP)
+[2026-04-08 10:17:08,965] TelemetryServer [INFO]   Report interval: 5s
+[2026-04-08 10:17:08,966] TelemetryServer [INFO]   Workers: 3 threads | DB: telemetry.db
+[2026-04-08 10:17:08,966] TelemetryServer [INFO]   Press Ctrl+C to stop and save.
+[2026-04-08 10:17:08,966] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:13,964] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:13,965] TelemetryServer [INFO]   PERIODIC TELEMETRY REPORT  (5s elapsed)
+[2026-04-08 10:17:13,965] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:13,965] TelemetryServer [INFO]   +- Client 1
+[2026-04-08 10:17:13,966] TelemetryServer [INFO]   |  Packets received : 159
+[2026-04-08 10:17:13,966] TelemetryServer [INFO]   |  Packets lost     : 17
+[2026-04-08 10:17:13,966] TelemetryServer [INFO]   |  Loss rate        : 9.66%
+[2026-04-08 10:17:13,966] TelemetryServer [INFO]   |  Ingestion rate   : 44.6 pkts/sec
+[2026-04-08 10:17:13,966] TelemetryServer [INFO]   |  Avg Latency      : 0.24 ms
+[2026-04-08 10:17:13,967] TelemetryServer [INFO]   |
+[2026-04-08 10:17:13,967] TelemetryServer [INFO]   |  CPU (%)          : avg=44.03  min=11.89  max=77.00  (n=36)
+[2026-04-08 10:17:13,968] TelemetryServer [INFO]   |  Memory (%)       : avg=62.12  min=34.55  max=96.46  (n=41)
+[2026-04-08 10:17:13,968] TelemetryServer [INFO]   |  Disk (%)         : avg=50.33  min=23.51  max=69.98  (n=32)
+[2026-04-08 10:17:13,968] TelemetryServer [INFO]   |  Network (Mbps)   : avg=199.29  min=2.22  max=380.29  (n=50)
+[2026-04-08 10:17:13,968] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:13,969] TelemetryServer [INFO]   +- Client 3
+[2026-04-08 10:17:13,969] TelemetryServer [INFO]   |  Packets received : 157
+[2026-04-08 10:17:13,969] TelemetryServer [INFO]   |  Packets lost     : 18
+[2026-04-08 10:17:13,969] TelemetryServer [INFO]   |  Loss rate        : 10.29%
+[2026-04-08 10:17:13,970] TelemetryServer [INFO]   |  Ingestion rate   : 44.3 pkts/sec
+[2026-04-08 10:17:13,970] TelemetryServer [INFO]   |  Avg Latency      : 0.17 ms
+[2026-04-08 10:17:13,970] TelemetryServer [INFO]   |
+[2026-04-08 10:17:13,970] TelemetryServer [INFO]   |  CPU (%)          : avg=44.84  min=0.00  max=82.86  (n=43)
+[2026-04-08 10:17:13,970] TelemetryServer [INFO]   |  Memory (%)       : avg=62.75  min=30.84  max=96.46  (n=39)
+[2026-04-08 10:17:13,970] TelemetryServer [INFO]   |  Disk (%)         : avg=49.13  min=27.88  max=74.88  (n=36)
+[2026-04-08 10:17:13,971] TelemetryServer [INFO]   |  Network (Mbps)   : avg=208.16  min=21.60  max=406.29  (n=39)
+[2026-04-08 10:17:13,971] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:13,971] TelemetryServer [INFO]   +- Client 2
+[2026-04-08 10:17:13,971] TelemetryServer [INFO]   |  Packets received : 159
+[2026-04-08 10:17:13,971] TelemetryServer [INFO]   |  Packets lost     : 16
+[2026-04-08 10:17:13,972] TelemetryServer [INFO]   |  Loss rate        : 9.14%
+[2026-04-08 10:17:13,972] TelemetryServer [INFO]   |  Ingestion rate   : 44.8 pkts/sec
+[2026-04-08 10:17:13,972] TelemetryServer [INFO]   |  Avg Latency      : 0.18 ms
+[2026-04-08 10:17:13,972] TelemetryServer [INFO]   |
+[2026-04-08 10:17:13,972] TelemetryServer [INFO]   |  CPU (%)          : avg=48.33  min=21.57  max=75.73  (n=38)
+[2026-04-08 10:17:13,973] TelemetryServer [INFO]   |  Memory (%)       : avg=60.79  min=25.55  max=93.95  (n=42)
+[2026-04-08 10:17:13,973] TelemetryServer [INFO]   |  Disk (%)         : avg=47.94  min=24.11  max=77.86  (n=36)
+[2026-04-08 10:17:13,973] TelemetryServer [INFO]   |  Network (Mbps)   : avg=177.59  min=0.00  max=352.83  (n=43)
+[2026-04-08 10:17:13,973] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:13,973] TelemetryServer [INFO]   +- Client 4
+[2026-04-08 10:17:13,974] TelemetryServer [INFO]   |  Packets received : 150
+[2026-04-08 10:17:13,974] TelemetryServer [INFO]   |  Packets lost     : 22
+[2026-04-08 10:17:13,974] TelemetryServer [INFO]   |  Loss rate        : 12.79%
+[2026-04-08 10:17:13,974] TelemetryServer [INFO]   |  Ingestion rate   : 43.0 pkts/sec
+[2026-04-08 10:17:13,974] TelemetryServer [INFO]   |  Avg Latency      : 0.25 ms
+[2026-04-08 10:17:13,974] TelemetryServer [INFO]   |
+[2026-04-08 10:17:13,975] TelemetryServer [INFO]   |  CPU (%)          : avg=39.66  min=6.50  max=73.16  (n=36)
+[2026-04-08 10:17:13,975] TelemetryServer [INFO]   |  Memory (%)       : avg=58.21  min=25.94  max=89.31  (n=36)
+[2026-04-08 10:17:13,975] TelemetryServer [INFO]   |  Disk (%)         : avg=50.77  min=27.97  max=69.10  (n=43)
+[2026-04-08 10:17:13,975] TelemetryServer [INFO]   |  Network (Mbps)   : avg=174.26  min=0.68  max=358.66  (n=35)
+[2026-04-08 10:17:13,975] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:13,975] TelemetryServer [INFO]   GLOBAL SUMMARY
+[2026-04-08 10:17:13,976] TelemetryServer [INFO]   -------------------------------------
+[2026-04-08 10:17:13,976] TelemetryServer [INFO]   Active clients     : 4
+[2026-04-08 10:17:13,976] TelemetryServer [INFO]   Total packets recv : 624
+[2026-04-08 10:17:13,976] TelemetryServer [INFO]   Total packets lost : 73
+[2026-04-08 10:17:13,976] TelemetryServer [INFO]   Aggregate loss %   : 10.47%
+[2026-04-08 10:17:13,977] TelemetryServer [INFO]   Overall rate       : 124.8 pkts/sec
+[2026-04-08 10:17:13,977] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:19,013] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:19,013] TelemetryServer [INFO]   PERIODIC TELEMETRY REPORT  (10s elapsed)
+[2026-04-08 10:17:19,013] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:19,013] TelemetryServer [INFO]   +- Client 1
+[2026-04-08 10:17:19,014] TelemetryServer [INFO]   |  Packets received : 266
+[2026-04-08 10:17:19,014] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:19,014] TelemetryServer [INFO]   |  Loss rate        : 9.83%
+[2026-04-08 10:17:19,014] TelemetryServer [INFO]   |  Ingestion rate   : 44.4 pkts/sec
+[2026-04-08 10:17:19,014] TelemetryServer [INFO]   |  Avg Latency      : 0.21 ms
+[2026-04-08 10:17:19,015] TelemetryServer [INFO]   |
+[2026-04-08 10:17:19,015] TelemetryServer [INFO]   |  CPU (%)          : avg=43.60  min=10.63  max=81.42  (n=62)
+[2026-04-08 10:17:19,015] TelemetryServer [INFO]   |  Memory (%)       : avg=60.42  min=26.85  max=96.46  (n=61)
+[2026-04-08 10:17:19,015] TelemetryServer [INFO]   |  Disk (%)         : avg=51.44  min=23.51  max=69.98  (n=63)
+[2026-04-08 10:17:19,016] TelemetryServer [INFO]   |  Network (Mbps)   : avg=208.59  min=1.75  max=449.30  (n=80)
+[2026-04-08 10:17:19,016] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:19,016] TelemetryServer [INFO]   +- Client 3
+[2026-04-08 10:17:19,016] TelemetryServer [INFO]   |  Packets received : 269
+[2026-04-08 10:17:19,016] TelemetryServer [INFO]   |  Packets lost     : 26
+[2026-04-08 10:17:19,017] TelemetryServer [INFO]   |  Loss rate        : 8.81%
+[2026-04-08 10:17:19,017] TelemetryServer [INFO]   |  Ingestion rate   : 44.9 pkts/sec
+[2026-04-08 10:17:19,017] TelemetryServer [INFO]   |  Avg Latency      : 0.16 ms
+[2026-04-08 10:17:19,017] TelemetryServer [INFO]   |
+[2026-04-08 10:17:19,017] TelemetryServer [INFO]   |  CPU (%)          : avg=42.76  min=0.00  max=82.86  (n=67)
+[2026-04-08 10:17:19,018] TelemetryServer [INFO]   |  Memory (%)       : avg=59.89  min=30.84  max=96.46  (n=70)
+[2026-04-08 10:17:19,018] TelemetryServer [INFO]   |  Disk (%)         : avg=49.07  min=27.88  max=75.98  (n=60)
+[2026-04-08 10:17:19,018] TelemetryServer [INFO]   |  Network (Mbps)   : avg=206.10  min=21.60  max=406.29  (n=72)
+[2026-04-08 10:17:19,018] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:19,018] TelemetryServer [INFO]   +- Client 2
+[2026-04-08 10:17:19,019] TelemetryServer [INFO]   |  Packets received : 264
+[2026-04-08 10:17:19,019] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:19,019] TelemetryServer [INFO]   |  Loss rate        : 9.90%
+[2026-04-08 10:17:19,019] TelemetryServer [INFO]   |  Ingestion rate   : 44.3 pkts/sec
+[2026-04-08 10:17:19,019] TelemetryServer [INFO]   |  Avg Latency      : 0.18 ms
+[2026-04-08 10:17:19,020] TelemetryServer [INFO]   |
+[2026-04-08 10:17:19,020] TelemetryServer [INFO]   |  CPU (%)          : avg=47.92  min=5.04  max=100.00  (n=63)
+[2026-04-08 10:17:19,020] TelemetryServer [INFO]   |  Memory (%)       : avg=58.05  min=24.28  max=93.95  (n=64)
+[2026-04-08 10:17:19,020] TelemetryServer [INFO]   |  Disk (%)         : avg=47.89  min=24.11  max=77.86  (n=71)
+[2026-04-08 10:17:19,021] TelemetryServer [INFO]   |  Network (Mbps)   : avg=181.44  min=0.00  max=479.00  (n=66)
+[2026-04-08 10:17:19,021] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:19,021] TelemetryServer [INFO]   +- Client 4
+[2026-04-08 10:17:19,021] TelemetryServer [INFO]   |  Packets received : 266
+[2026-04-08 10:17:19,021] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:19,022] TelemetryServer [INFO]   |  Loss rate        : 9.83%
+[2026-04-08 10:17:19,022] TelemetryServer [INFO]   |  Ingestion rate   : 44.4 pkts/sec
+[2026-04-08 10:17:19,022] TelemetryServer [INFO]   |  Avg Latency      : 0.23 ms
+[2026-04-08 10:17:19,022] TelemetryServer [INFO]   |
+[2026-04-08 10:17:19,022] TelemetryServer [INFO]   |  CPU (%)          : avg=44.27  min=6.50  max=91.56  (n=64)
+[2026-04-08 10:17:19,023] TelemetryServer [INFO]   |  Memory (%)       : avg=59.18  min=25.94  max=94.68  (n=65)
+[2026-04-08 10:17:19,023] TelemetryServer [INFO]   |  Disk (%)         : avg=50.69  min=21.14  max=72.85  (n=75)
+[2026-04-08 10:17:19,023] TelemetryServer [INFO]   |  Network (Mbps)   : avg=177.74  min=0.68  max=427.17  (n=62)
+[2026-04-08 10:17:19,023] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:19,024] TelemetryServer [INFO]   GLOBAL SUMMARY
+[2026-04-08 10:17:19,024] TelemetryServer [INFO]   -------------------------------------
+[2026-04-08 10:17:19,024] TelemetryServer [INFO]   Active clients     : 4
+[2026-04-08 10:17:19,024] TelemetryServer [INFO]   Total packets recv : 1065
+[2026-04-08 10:17:19,024] TelemetryServer [INFO]   Total packets lost : 113
+[2026-04-08 10:17:19,025] TelemetryServer [INFO]   Aggregate loss %   : 9.59%
+[2026-04-08 10:17:19,025] TelemetryServer [INFO]   Overall rate       : 106.0 pkts/sec
+[2026-04-08 10:17:19,025] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:24,013] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:24,014] TelemetryServer [INFO]   PERIODIC TELEMETRY REPORT  (15s elapsed)
+[2026-04-08 10:17:24,014] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:24,014] TelemetryServer [INFO]   +- Client 1
+[2026-04-08 10:17:24,014] TelemetryServer [INFO]   |  Packets received : 266
+[2026-04-08 10:17:24,014] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:24,015] TelemetryServer [INFO]   |  Loss rate        : 9.83%
+[2026-04-08 10:17:24,015] TelemetryServer [INFO]   |  Ingestion rate   : 44.4 pkts/sec
+[2026-04-08 10:17:24,015] TelemetryServer [INFO]   |  Avg Latency      : 0.21 ms
+[2026-04-08 10:17:24,015] TelemetryServer [INFO]   |
+[2026-04-08 10:17:24,016] TelemetryServer [INFO]   |  CPU (%)          : avg=43.60  min=10.63  max=81.42  (n=62)
+[2026-04-08 10:17:24,016] TelemetryServer [INFO]   |  Memory (%)       : avg=60.42  min=26.85  max=96.46  (n=61)
+[2026-04-08 10:17:24,016] TelemetryServer [INFO]   |  Disk (%)         : avg=51.44  min=23.51  max=69.98  (n=63)
+[2026-04-08 10:17:24,016] TelemetryServer [INFO]   |  Network (Mbps)   : avg=208.59  min=1.75  max=449.30  (n=80)
+[2026-04-08 10:17:24,016] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:24,017] TelemetryServer [INFO]   +- Client 3
+[2026-04-08 10:17:24,017] TelemetryServer [INFO]   |  Packets received : 269
+[2026-04-08 10:17:24,017] TelemetryServer [INFO]   |  Packets lost     : 26
+[2026-04-08 10:17:24,017] TelemetryServer [INFO]   |  Loss rate        : 8.81%
+[2026-04-08 10:17:24,017] TelemetryServer [INFO]   |  Ingestion rate   : 44.9 pkts/sec
+[2026-04-08 10:17:24,018] TelemetryServer [INFO]   |  Avg Latency      : 0.16 ms
+[2026-04-08 10:17:24,018] TelemetryServer [INFO]   |
+[2026-04-08 10:17:24,018] TelemetryServer [INFO]   |  CPU (%)          : avg=42.76  min=0.00  max=82.86  (n=67)
+[2026-04-08 10:17:24,018] TelemetryServer [INFO]   |  Memory (%)       : avg=59.89  min=30.84  max=96.46  (n=70)
+[2026-04-08 10:17:24,018] TelemetryServer [INFO]   |  Disk (%)         : avg=49.07  min=27.88  max=75.98  (n=60)
+[2026-04-08 10:17:24,019] TelemetryServer [INFO]   |  Network (Mbps)   : avg=206.10  min=21.60  max=406.29  (n=72)
+[2026-04-08 10:17:24,019] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:24,019] TelemetryServer [INFO]   +- Client 2
+[2026-04-08 10:17:24,019] TelemetryServer [INFO]   |  Packets received : 264
+[2026-04-08 10:17:24,019] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:24,020] TelemetryServer [INFO]   |  Loss rate        : 9.90%
+[2026-04-08 10:17:24,020] TelemetryServer [INFO]   |  Ingestion rate   : 44.3 pkts/sec
+[2026-04-08 10:17:24,020] TelemetryServer [INFO]   |  Avg Latency      : 0.18 ms
+[2026-04-08 10:17:24,020] TelemetryServer [INFO]   |
+[2026-04-08 10:17:24,020] TelemetryServer [INFO]   |  CPU (%)          : avg=47.92  min=5.04  max=100.00  (n=63)
+[2026-04-08 10:17:24,021] TelemetryServer [INFO]   |  Memory (%)       : avg=58.05  min=24.28  max=93.95  (n=64)
+[2026-04-08 10:17:24,021] TelemetryServer [INFO]   |  Disk (%)         : avg=47.89  min=24.11  max=77.86  (n=71)
+[2026-04-08 10:17:24,021] TelemetryServer [INFO]   |  Network (Mbps)   : avg=181.44  min=0.00  max=479.00  (n=66)
+[2026-04-08 10:17:24,021] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:24,021] TelemetryServer [INFO]   +- Client 4
+[2026-04-08 10:17:24,022] TelemetryServer [INFO]   |  Packets received : 266
+[2026-04-08 10:17:24,022] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:24,022] TelemetryServer [INFO]   |  Loss rate        : 9.83%
+[2026-04-08 10:17:24,022] TelemetryServer [INFO]   |  Ingestion rate   : 44.4 pkts/sec
+[2026-04-08 10:17:24,022] TelemetryServer [INFO]   |  Avg Latency      : 0.23 ms
+[2026-04-08 10:17:24,023] TelemetryServer [INFO]   |
+[2026-04-08 10:17:24,023] TelemetryServer [INFO]   |  CPU (%)          : avg=44.27  min=6.50  max=91.56  (n=64)
+[2026-04-08 10:17:24,023] TelemetryServer [INFO]   |  Memory (%)       : avg=59.18  min=25.94  max=94.68  (n=65)
+[2026-04-08 10:17:24,023] TelemetryServer [INFO]   |  Disk (%)         : avg=50.69  min=21.14  max=72.85  (n=75)
+[2026-04-08 10:17:24,023] TelemetryServer [INFO]   |  Network (Mbps)   : avg=177.74  min=0.68  max=427.17  (n=62)
+[2026-04-08 10:17:24,024] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:24,024] TelemetryServer [INFO]   GLOBAL SUMMARY
+[2026-04-08 10:17:24,024] TelemetryServer [INFO]   -------------------------------------
+[2026-04-08 10:17:24,024] TelemetryServer [INFO]   Active clients     : 4
+[2026-04-08 10:17:24,024] TelemetryServer [INFO]   Total packets recv : 1065
+[2026-04-08 10:17:24,025] TelemetryServer [INFO]   Total packets lost : 113
+[2026-04-08 10:17:24,025] TelemetryServer [INFO]   Aggregate loss %   : 9.59%
+[2026-04-08 10:17:24,025] TelemetryServer [INFO]   Overall rate       : 70.8 pkts/sec
+[2026-04-08 10:17:24,025] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:29,076] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:29,076] TelemetryServer [INFO]   PERIODIC TELEMETRY REPORT  (20s elapsed)
+[2026-04-08 10:17:29,076] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:29,076] TelemetryServer [INFO]   +- Client 1
+[2026-04-08 10:17:29,077] TelemetryServer [INFO]   |  Packets received : 266
+[2026-04-08 10:17:29,077] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:29,077] TelemetryServer [INFO]   |  Loss rate        : 9.83%
+[2026-04-08 10:17:29,077] TelemetryServer [INFO]   |  Ingestion rate   : 44.4 pkts/sec
+[2026-04-08 10:17:29,078] TelemetryServer [INFO]   |  Avg Latency      : 0.21 ms
+[2026-04-08 10:17:29,078] TelemetryServer [INFO]   |
+[2026-04-08 10:17:29,078] TelemetryServer [INFO]   |  CPU (%)          : avg=43.60  min=10.63  max=81.42  (n=62)
+[2026-04-08 10:17:29,078] TelemetryServer [INFO]   |  Memory (%)       : avg=60.42  min=26.85  max=96.46  (n=61)
+[2026-04-08 10:17:29,078] TelemetryServer [INFO]   |  Disk (%)         : avg=51.44  min=23.51  max=69.98  (n=63)
+[2026-04-08 10:17:29,078] TelemetryServer [INFO]   |  Network (Mbps)   : avg=208.59  min=1.75  max=449.30  (n=80)
+[2026-04-08 10:17:29,078] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:29,079] TelemetryServer [INFO]   +- Client 3
+[2026-04-08 10:17:29,079] TelemetryServer [INFO]   |  Packets received : 269
+[2026-04-08 10:17:29,079] TelemetryServer [INFO]   |  Packets lost     : 26
+[2026-04-08 10:17:29,079] TelemetryServer [INFO]   |  Loss rate        : 8.81%
+[2026-04-08 10:17:29,079] TelemetryServer [INFO]   |  Ingestion rate   : 44.9 pkts/sec
+[2026-04-08 10:17:29,079] TelemetryServer [INFO]   |  Avg Latency      : 0.16 ms
+[2026-04-08 10:17:29,079] TelemetryServer [INFO]   |
+[2026-04-08 10:17:29,079] TelemetryServer [INFO]   |  CPU (%)          : avg=42.76  min=0.00  max=82.86  (n=67)
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   |  Memory (%)       : avg=59.89  min=30.84  max=96.46  (n=70)
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   |  Disk (%)         : avg=49.07  min=27.88  max=75.98  (n=60)
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   |  Network (Mbps)   : avg=206.10  min=21.60  max=406.29  (n=72)
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   +- Client 2
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   |  Packets received : 264
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   |  Loss rate        : 9.90%
+[2026-04-08 10:17:29,080] TelemetryServer [INFO]   |  Ingestion rate   : 44.3 pkts/sec
+[2026-04-08 10:17:29,081] TelemetryServer [INFO]   |  Avg Latency      : 0.18 ms
+[2026-04-08 10:17:29,081] TelemetryServer [INFO]   |
+[2026-04-08 10:17:29,081] TelemetryServer [INFO]   |  CPU (%)          : avg=47.92  min=5.04  max=100.00  (n=63)
+[2026-04-08 10:17:29,081] TelemetryServer [INFO]   |  Memory (%)       : avg=58.05  min=24.28  max=93.95  (n=64)
+[2026-04-08 10:17:29,081] TelemetryServer [INFO]   |  Disk (%)         : avg=47.89  min=24.11  max=77.86  (n=71)
+[2026-04-08 10:17:29,082] TelemetryServer [INFO]   |  Network (Mbps)   : avg=181.44  min=0.00  max=479.00  (n=66)
+[2026-04-08 10:17:29,082] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:29,082] TelemetryServer [INFO]   +- Client 4
+[2026-04-08 10:17:29,082] TelemetryServer [INFO]   |  Packets received : 266
+[2026-04-08 10:17:29,082] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:29,082] TelemetryServer [INFO]   |  Loss rate        : 9.83%
+[2026-04-08 10:17:29,083] TelemetryServer [INFO]   |  Ingestion rate   : 44.4 pkts/sec
+[2026-04-08 10:17:29,083] TelemetryServer [INFO]   |  Avg Latency      : 0.23 ms
+[2026-04-08 10:17:29,083] TelemetryServer [INFO]   |
+[2026-04-08 10:17:29,083] TelemetryServer [INFO]   |  CPU (%)          : avg=44.27  min=6.50  max=91.56  (n=64)
+[2026-04-08 10:17:29,083] TelemetryServer [INFO]   |  Memory (%)       : avg=59.18  min=25.94  max=94.68  (n=65)
+[2026-04-08 10:17:29,083] TelemetryServer [INFO]   |  Disk (%)         : avg=50.69  min=21.14  max=72.85  (n=75)
+[2026-04-08 10:17:29,083] TelemetryServer [INFO]   |  Network (Mbps)   : avg=177.74  min=0.68  max=427.17  (n=62)
+[2026-04-08 10:17:29,084] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:29,084] TelemetryServer [INFO]   GLOBAL SUMMARY
+[2026-04-08 10:17:29,084] TelemetryServer [INFO]   -------------------------------------
+[2026-04-08 10:17:29,084] TelemetryServer [INFO]   Active clients     : 4
+[2026-04-08 10:17:29,084] TelemetryServer [INFO]   Total packets recv : 1065
+[2026-04-08 10:17:29,084] TelemetryServer [INFO]   Total packets lost : 113
+[2026-04-08 10:17:29,085] TelemetryServer [INFO]   Aggregate loss %   : 9.59%
+[2026-04-08 10:17:29,085] TelemetryServer [INFO]   Overall rate       : 53.0 pkts/sec
+[2026-04-08 10:17:29,085] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:34,110] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:34,111] TelemetryServer [INFO]   PERIODIC TELEMETRY REPORT  (25s elapsed)
+[2026-04-08 10:17:34,111] TelemetryServer [INFO] ===============================================================
+[2026-04-08 10:17:34,111] TelemetryServer [INFO]   +- Client 1
+[2026-04-08 10:17:34,111] TelemetryServer [INFO]   |  Packets received : 266
+[2026-04-08 10:17:34,111] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:34,112] TelemetryServer [INFO]   |  Loss rate        : 9.83%
+[2026-04-08 10:17:34,112] TelemetryServer [INFO]   |  Ingestion rate   : 44.4 pkts/sec
+[2026-04-08 10:17:34,112] TelemetryServer [INFO]   |  Avg Latency      : 0.21 ms
+[2026-04-08 10:17:34,112] TelemetryServer [INFO]   |
+[2026-04-08 10:17:34,113] TelemetryServer [INFO]   |  CPU (%)          : avg=43.60  min=10.63  max=81.42  (n=62)
+[2026-04-08 10:17:34,113] TelemetryServer [INFO]   |  Memory (%)       : avg=60.42  min=26.85  max=96.46  (n=61)
+[2026-04-08 10:17:34,113] TelemetryServer [INFO]   |  Disk (%)         : avg=51.44  min=23.51  max=69.98  (n=63)
+[2026-04-08 10:17:34,113] TelemetryServer [INFO]   |  Network (Mbps)   : avg=208.59  min=1.75  max=449.30  (n=80)
+[2026-04-08 10:17:34,113] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:34,114] TelemetryServer [INFO]   +- Client 3
+[2026-04-08 10:17:34,114] TelemetryServer [INFO]   |  Packets received : 269
+[2026-04-08 10:17:34,114] TelemetryServer [INFO]   |  Packets lost     : 26
+[2026-04-08 10:17:34,114] TelemetryServer [INFO]   |  Loss rate        : 8.81%
+[2026-04-08 10:17:34,114] TelemetryServer [INFO]   |  Ingestion rate   : 44.9 pkts/sec
+[2026-04-08 10:17:34,115] TelemetryServer [INFO]   |  Avg Latency      : 0.16 ms
+[2026-04-08 10:17:34,115] TelemetryServer [INFO]   |
+[2026-04-08 10:17:34,115] TelemetryServer [INFO]   |  CPU (%)          : avg=42.76  min=0.00  max=82.86  (n=67)
+[2026-04-08 10:17:34,115] TelemetryServer [INFO]   |  Memory (%)       : avg=59.89  min=30.84  max=96.46  (n=70)
+[2026-04-08 10:17:34,115] TelemetryServer [INFO]   |  Disk (%)         : avg=49.07  min=27.88  max=75.98  (n=60)
+[2026-04-08 10:17:34,116] TelemetryServer [INFO]   |  Network (Mbps)   : avg=206.10  min=21.60  max=406.29  (n=72)
+[2026-04-08 10:17:34,116] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:34,116] TelemetryServer [INFO]   +- Client 2
+[2026-04-08 10:17:34,116] TelemetryServer [INFO]   |  Packets received : 264
+[2026-04-08 10:17:34,117] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:34,117] TelemetryServer [INFO]   |  Loss rate        : 9.90%
+[2026-04-08 10:17:34,117] TelemetryServer [INFO]   |  Ingestion rate   : 44.3 pkts/sec
+[2026-04-08 10:17:34,117] TelemetryServer [INFO]   |  Avg Latency      : 0.18 ms
+[2026-04-08 10:17:34,117] TelemetryServer [INFO]   |
+[2026-04-08 10:17:34,117] TelemetryServer [INFO]   |  CPU (%)          : avg=47.92  min=5.04  max=100.00  (n=63)
+[2026-04-08 10:17:34,118] TelemetryServer [INFO]   |  Memory (%)       : avg=58.05  min=24.28  max=93.95  (n=64)
+[2026-04-08 10:17:34,118] TelemetryServer [INFO]   |  Disk (%)         : avg=47.89  min=24.11  max=77.86  (n=71)
+[2026-04-08 10:17:34,118] TelemetryServer [INFO]   |  Network (Mbps)   : avg=181.44  min=0.00  max=479.00  (n=66)
+[2026-04-08 10:17:34,118] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:34,119] TelemetryServer [INFO]   +- Client 4
+[2026-04-08 10:17:34,119] TelemetryServer [INFO]   |  Packets received : 266
+[2026-04-08 10:17:34,119] TelemetryServer [INFO]   |  Packets lost     : 29
+[2026-04-08 10:17:34,119] TelemetryServer [INFO]   |  Loss rate        : 9.83%
+[2026-04-08 10:17:34,119] TelemetryServer [INFO]   |  Ingestion rate   : 44.4 pkts/sec
+[2026-04-08 10:17:34,120] TelemetryServer [INFO]   |  Avg Latency      : 0.23 ms
+[2026-04-08 10:17:34,120] TelemetryServer [INFO]   |
+[2026-04-08 10:17:34,120] TelemetryServer [INFO]   |  CPU (%)          : avg=44.27  min=6.50  max=91.56  (n=64)
+[2026-04-08 10:17:34,120] TelemetryServer [INFO]   |  Memory (%)       : avg=59.18  min=25.94  max=94.68  (n=65)
+[2026-04-08 10:17:34,121] TelemetryServer [INFO]   |  Disk (%)         : avg=50.69  min=21.14  max=72.85  (n=75)
+[2026-04-08 10:17:34,121] TelemetryServer [INFO]   |  Network (Mbps)   : avg=177.74  min=0.68  max=427.17  (n=62)
+[2026-04-08 10:17:34,121] TelemetryServer [INFO]   +-
+[2026-04-08 10:17:34,121] TelemetryServer [INFO]   GLOBAL SUMMARY
+[2026-04-08 10:17:34,121] TelemetryServer [INFO]   -------------------------------------
+[2026-04-08 10:17:34,122] TelemetryServer [INFO]   Active clients     : 4
+[2026-04-08 10:17:34,122] TelemetryServer [INFO]   Total packets recv : 1065
+[2026-04-08 10:17:34,122] TelemetryServer [INFO]   Total packets lost : 113
+[2026-04-08 10:17:34,122] TelemetryServer [INFO]   Aggregate loss %   : 9.59%
+[2026-04-08 10:17:34,122] TelemetryServer [INFO]   Overall rate       : 42.4 pkts/sec
+[2026-04-08 10:17:34,123] TelemetryServer [INFO] ===============================================================
